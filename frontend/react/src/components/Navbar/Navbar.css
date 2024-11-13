@@ -8,7 +8,7 @@
 
 .navbar-logo {
 	color: var(--secondary-clr);
-	font-size: var(--ff-large);
+	font-size: 26px;
 	cursor: pointer;
 }
 

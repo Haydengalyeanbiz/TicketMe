@@ -1,0 +1,4 @@
+.events-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}

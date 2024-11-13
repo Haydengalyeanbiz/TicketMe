@@ -5,6 +5,7 @@ from models import User
 
 auth_bp = Blueprint('auth', __name__)
 
+# !----------SIGN UP----------------
 @auth_bp.route('/register', methods=['POST'])
 def register():
     data = request.json
@@ -30,6 +31,7 @@ def register():
             }
         }), 201
 
+# !----------LOGIN----------------
 @auth_bp.route('/login', methods=['POST'])
 def login():
     data = request.json
@@ -48,6 +50,7 @@ def login():
         }), 200
     return jsonify({"error": "Invalid email or password"}), 401
 
+# !----------LOGOUT----------------
 @auth_bp.route('/logout', methods=['POST'])
 def logout():
     session.pop('user_id', None)

@@ -22,6 +22,8 @@ class Event(db.Model):
     available_tickets = db.Column(db.Integer, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     tickets = db.relationship('Ticket', backref='event', lazy=True)
+    category = db.Column(db.String(50), nullable=True)
+    image_url = db.Column(db.String(255), nullable=True)
 
 class Ticket(db.Model):
     __tablename__ = 'tickets'
