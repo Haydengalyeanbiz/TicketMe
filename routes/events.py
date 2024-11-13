@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify
 from models import Event  
 from extensions import db  
 
-events_bp = Blueprint('events', __name__, url_prefix='/api/events')
+events_bp = Blueprint('events', __name__)
 
 # !--------------ALL EVENTS----------------
 @events_bp.route('/', methods=['GET'])

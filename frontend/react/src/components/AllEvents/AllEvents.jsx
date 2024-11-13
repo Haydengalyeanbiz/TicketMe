@@ -5,23 +5,30 @@ import { fetchAllEvents } from '../../store/reducers/eventReducer';
 
 const AllEvents = () => {
 	const dispatch = useDispatch();
-	const events = useSelector((state) => state.events.AllEvents);
+	const events = useSelector((state) => state.events.allEvents);
+	const selectedCategory = useSelector(
+		(state) => state.events.selectedCategory
+	);
 
 	useEffect(() => {
 		dispatch(fetchAllEvents());
 	}, [dispatch]);
 
+	const filteredEvents = selectedCategory
+		? events.filter((event) => event.category === selectedCategory)
+		: events;
+
 	return (
 		<div className='events-wrapper'>
-			{events && events.length > 0 ? (
-				events.map((event) => (
+			{filteredEvents.length > 0 ? (
+				filteredEvents.map((event) => (
 					<div
-						className='event-structure'
 						key={event.id}
+						className='event-structure'
 					>
-						<h3 className='event-title'>{event.name}</h3>
-						<p className='event-description'>{event.description}</p>
-						<p className='event-category'>Category: {event.category}</p>
+						<h3>{event.name}</h3>
+						<p>{event.description}</p>
+						<p>Category: {event.category}</p>
 					</div>
 				))
 			) : (

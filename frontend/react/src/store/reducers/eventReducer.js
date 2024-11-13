@@ -1,6 +1,7 @@
 //? ACTION TYPES
 const SET_ALL_EVENTS = 'events/SET_ALL_EVENTS';
 const SET_SELECTED_EVENT = 'events/SET_SELECTED_EVENT';
+const SET_SELECTED_CATEGORY = 'events/SET_SELECTED_CATEGORY';
 
 //? ACTION CREATORS
 const setAllEvents = (events) => ({
@@ -11,6 +12,10 @@ const setAllEvents = (events) => ({
 const setSelectedEvent = (event) => ({
 	type: SET_SELECTED_EVENT,
 	payload: event,
+});
+export const setSelectedCategory = (category) => ({
+	type: SET_SELECTED_CATEGORY,
+	payload: category,
 });
 
 // ! THUNKS
@@ -41,9 +46,10 @@ export const fetchEventById = (id) => async (dispatch) => {
 };
 
 const initialState = {
+	allEvents: [],
 	eventId: null,
 	eventDetails: null,
-	allEvents: [],
+	selectedCategory: null,
 };
 
 const eventReducer = (state = initialState, action) => {
@@ -58,6 +64,11 @@ const eventReducer = (state = initialState, action) => {
 				...state,
 				eventId: action.payload.id,
 				eventDetails: action.payload,
+			};
+		case SET_SELECTED_CATEGORY:
+			return {
+				...state,
+				selectedCategory: action.payload,
 			};
 		default:
 			return state;
