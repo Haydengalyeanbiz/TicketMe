@@ -10,6 +10,17 @@
 	/* !FONTS */
 	--header-ff: 'Shrikhand', serif;
 	--text-ff: 'Roboto', serif;
+
+	/* !FONT SIZES */
+	--ff-primary: 14px;
+	--ff-small: 16px;
+	--ff-med: 24px;
+	--ff-large: 36px;
+	--ff-xl: 48px;
+	--ff-header: 72px;
+
+	/* !ANIMATIONS */
+	--transition: 0.3s all ease;
 }
 
 body,
@@ -24,10 +35,46 @@ h2,
 h3,
 label {
 	font-family: var(--header-ff);
+	margin: 0;
+	padding: 0;
 }
 
 a,
 p,
 input {
 	font-family: var(--text-ff);
+	margin: 0;
+	padding: 0;
+}
+
+button,
+a {
+	cursor: pointer;
+}
+
+/* default font sizes */
+h1 {
+	font-size: var(--ff-header);
+}
+
+h2 {
+	font-size: var(--ff-large);
+}
+
+h3 {
+	font-size: var(--ff-med);
+}
+
+p,
+input {
+	font-size: var(--ff-primary);
+}
+
+button,
+a {
+	font-size: var(--ff-small);
+}
+
+a {
+	text-decoration: none;
 }

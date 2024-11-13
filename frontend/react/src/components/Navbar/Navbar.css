@@ -1,0 +1,50 @@
+.navbar-wrapper {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0.5rem 0;
+	background-color: var(--primary-clr);
+}
+
+.navbar-logo {
+	color: var(--secondary-clr);
+	font-size: var(--ff-large);
+	cursor: pointer;
+}
+
+.button-holder {
+	display: flex;
+	gap: 1rem;
+}
+
+.navbar-loginsu {
+	font-family: var(--header-ff);
+	padding: 0.5rem 1rem;
+	border-radius: 12px;
+	transition: var(--transition);
+	color: var(--secondary-clr);
+}
+
+.navbar-loginsu:hover {
+	background-color: var(--secondary-accent);
+}
+
+.nav-btn {
+	color: var(--secondary-clr);
+	border: none;
+	border-radius: 12px;
+	background-color: transparent;
+	height: 2rem;
+	width: 3rem;
+	font-size: 20px;
+	transition: var(--transition);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav-btn:hover {
+	/* border: solid 2px var(--secondary-clr); */
+	background-color: var(--secondary-accent);
+	color: var(--secondary-clr);
+}

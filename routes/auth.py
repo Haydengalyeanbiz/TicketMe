@@ -22,7 +22,13 @@ def register():
 
     session['user_id'] = new_user.id
 
-    return jsonify({"message": "User registered successfully"}), 201
+    return jsonify({
+            "user": {
+                "id": new_user.id,
+                "username": new_user.username,
+                "email": new_user.email
+            }
+        }), 201
 
 @auth_bp.route('/login', methods=['POST'])
 def login():

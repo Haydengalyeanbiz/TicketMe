@@ -1,7 +1,7 @@
 // !action creators
-const LOGIN_USER = 'user/LOGIN_USER';
-const LOGOUT_USER = 'user/LOGOUT_USER';
-const SIGNUP_USER = 'user/SIGNUP_USER';
+const LOGIN_USER = 'LOGIN_USER';
+const LOGOUT_USER = 'LOGOUT_USER';
+const SIGNUP_USER = 'SIGNUP_USER';
 
 // !actions
 const loginUser = (user) => {
